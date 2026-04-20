@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-primary: var(--primary-color, #4f46e5);
+  --color-brand-secondary: var(--secondary-color, #10b981);
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-white text-slate-900 transition-colors duration-200;
+  }
+
+  /* Global light mode "Full Light" refinements - Removing greys */
+  .bg-slate-50, .bg-slate-100 {
+    @apply bg-white!;
+  }
+  .bg-slate-50\/50, .bg-slate-50\/30 {
+    @apply bg-white!;
+  }
+  .text-slate-400, .text-slate-500, .text-slate-600 {
+    @apply text-black!;
+  }
+  .border-slate-100, .border-slate-200 {
+    @apply border-slate-100!; /* Keep very subtle lines for structure */
+  }
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-primary: var(--primary-color, #4f46e5);
+  --color-brand-secondary: var(--secondary-color, #10b981);
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-indigo-600 text-white rounded-xl text-sm font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 active:scale-95 disabled:opacity-70;
+  }
+}
